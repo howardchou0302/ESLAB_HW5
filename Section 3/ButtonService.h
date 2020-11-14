@@ -37,7 +37,7 @@ public:
         //ble.gattServer().write(buttonState.getValueHandle(), (uint8_t *)&newState, sizeof(bool));
         uint8_t data[9] = [97,98,99,100,101,102,103,104,105];
     
-        ble.gattServer().write(buttonState.getValueHandle(), &data[index], sizeof(bool));
+        ble.gattServer().write(buttonState.getValueHandle(), &data[index%9], sizeof(bool));
 
         index++;
     }
